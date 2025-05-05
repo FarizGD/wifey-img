@@ -23,7 +23,7 @@ def download_images_from_safebooru(url, download_path="."):
         downloaded_count = 0
 
         for i, post in enumerate(data):
-            if downloaded_count >= 100:
+            if downloaded_count >= 301:
                 break
 
             if 'file_url' in post:
@@ -56,6 +56,6 @@ def download_images_from_safebooru(url, download_path="."):
         print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
-    json_url = "https://safebooru.org/index.php?page=dapi&s=post&q=index&tags=yuuka_%28blue_archive%29+&limit=100&json=1"
+    json_url = "https://safebooru.org/index.php?page=dapi&s=post&q=index&tags=yuuka_%28blue_archive%29+&limit=300&json=1"
     download_directory = "images"  # You can change this to your desired directory
     download_images_from_safebooru(json_url, download_directory)
